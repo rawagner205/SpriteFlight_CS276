@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float thrustForce = 1f;
     public float maxSpeed = 5f;
     Rigidbody2D rb;
+    public GameObject borderParent;
 
     //variables used for scoring system
     private float elapsedTime = 0f;
@@ -73,5 +74,6 @@ public class PlayerController : MonoBehaviour
         Instantiate(explosionEffect, transform.position, transform.rotation);
         restartButton.style.display = DisplayStyle.Flex;
         Destroy(gameObject);
+        borderParent.SetActive(false);
     }
 }
